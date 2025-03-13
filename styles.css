@@ -1,0 +1,170 @@
+/* Full-screen and responsive layout */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Global Dark Mode with teal accent */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1e1e1e;
+  color: #dcdcdc;
+}
+
+.container {
+  box-sizing: border-box;
+  width: 95vw;
+  height: 95vh;
+  margin: 2vh auto;
+  padding: 20px;
+  background-color: #2c2c2c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+/* Flex container for two-column layout */
+.flex-container {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+}
+
+/* Left Panel: Input Area */
+.left-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-area {
+  flex: 1;
+  min-height: 300px;
+  padding: 10px;
+  border: 1px dashed #555;
+  background-color: #1e1e1e;
+  overflow: auto;
+  resize: both;
+}
+
+/* Right Panel: Output Tabs */
+.right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Tabs styling */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.tablink {
+  flex: 1;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #3a3a3a;
+  border: none;
+  font-size: 1em;
+  color: #dcdcdc;
+  transition: background-color 0.3s;
+}
+
+.tablink.active, .tablink:hover {
+  background-color: #00802f;
+  color: #fff;
+}
+
+.tabcontent {
+  flex: 1;
+  display: block;
+  overflow: auto;
+}
+
+/* Pre/code block for outputs */
+pre {
+  background-color: #1e1e1e;
+  padding: 10px;
+  overflow: auto;
+  margin: 10px 0;
+  border: 1px solid #555;
+  max-height: 400px;
+  white-space: pre-wrap;  /* Preserves line breaks */
+}
+
+code.json, code.csv {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9em;
+  white-space: pre-wrap;
+}
+
+/* Table styling for generated table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th, tbody td {
+  border: 1px solid #555;
+  padding: 8px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+thead th[contenteditable="true"], tbody td[contenteditable="true"] {
+  background-color: #2c2c2c;
+}
+
+/* Button styling using teal accent */
+.btn {
+  padding: 12px 20px;
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  margin: 10px 0;
+}
+
+.btn-primary {
+  background-color: #00802f;
+  color: #fff;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #00802f;
+}
+
+.btn:hover {
+  background-color: #555;
+}
+
+/* Button group styling */
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}

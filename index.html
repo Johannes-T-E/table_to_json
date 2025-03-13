@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Excel/CSV Converter</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Include highlight.js dark theme -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/monokai-sublime.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Excel/CSV Converter</h1>
+    <div class="flex-container">
+      <!-- Left Panel: Editable Table Input -->
+      <div class="left-panel">
+        <h2>Table Input</h2>
+        <div id="inputArea" contenteditable="true" class="input-area">
+          Click here and paste your Excel (or CSV) data...
+        </div>
+      </div>
+      <!-- Right Panel: Output Tabs -->
+      <div class="right-panel">
+        <div class="tabs">
+          <button class="tablink active" data-tab="jsonTab">JSON</button>
+          <button class="tablink" data-tab="csvTab">CSV</button>
+        </div>
+        <div class="tabcontent" id="jsonTab">
+          <pre><code id="jsonOutput" class="json"></code></pre>
+          <div class="button-group">
+            <button id="copyJsonButton" class="btn">Copy JSON</button>
+            <button id="downloadJsonButton" class="btn">Download JSON</button>
+          </div>
+        </div>
+        <div class="tabcontent" id="csvTab" style="display: none;">
+          <pre><code id="csvOutput" class="csv"></code></pre>
+          <div class="button-group">
+            <button id="copyCsvButton" class="btn">Copy CSV</button>
+            <button id="downloadCsvButton" class="btn">Download CSV</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="scripts.js"></script>
+  <!-- Include highlight.js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</body>
+</html>
